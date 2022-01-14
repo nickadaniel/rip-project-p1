@@ -1,0 +1,93 @@
+R1 
+
+Protocol 
+GigabitEthernet0/0/0   192.168.2.1     YES manual up                    up 
+GigabitEthernet0/0/1   unassigned      YES unset  up                    up 
+GigabitEthernet0/0/2   unassigned      YES unset  administratively down down 
+Vlan1                  unassigned      YES unset  administratively down down
+Router#
+Router#
+Router#
+Router#
+Router#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#ip add 192.168.2.1 255.255.255.0
+                   ^
+% Invalid input detected at '^' marker.
+	
+Router(config)#
+Router(config)#ip add 192.168.2.1 255.255.255.0
+                   ^
+% Invalid input detected at '^' marker.
+	
+Router(config)#
+Router(config)#
+Router(config)#end
+Router#
+%SYS-5-CONFIG_I: Configured from console by console
+
+Router#
+Router#
+Router#
+Router#wr
+Building configuration...
+[OK]
+Router#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#int gig0/0/1
+Router(config-if)#ip add 192.168.2.1 255.255.255.0
+% 192.168.2.0 overlaps with GigabitEthernet0/0/0
+Router(config-if)#ip add 192.168.2.1 255.255.255.1
+Bad mask 0xFFFFFF01 for address 192.168.2.1
+Router(config-if)#ip add 192.168.55.1 255.255.255.1
+Bad mask 0xFFFFFF01 for address 192.168.55.1
+Router(config-if)#end
+Router#
+%SYS-5-CONFIG_I: Configured from console by console
+
+Router#
+Router#wr
+Building configuration...
+[OK]
+Router#
+Router#
+Router#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#
+Router(config)#
+Router(config)#end
+Router#
+%SYS-5-CONFIG_I: Configured from console by console
+
+Router#wr
+Building configuration...
+[OK]
+Router#
+Router#
+Router#
+Router#
+Router#
+Router#
+Router#
+Router#conf 
+Configuring from terminal, memory, or network [terminal]? n
+% This command is not supported by Packet Tracer.
+Router#
+Router#
+Router#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#int gig0/0/1
+Router(config-if)#ip add 192.168.55.3 255.255.255.0
+Router(config-if)#end
+Router#
+%SYS-5-CONFIG_I: Configured from console by console
+
+Router#
+Router#wr
+Building configuration...
+[OK]
+Router#
+Router#wr
+Building configuration...
+[OK]
+Router#
